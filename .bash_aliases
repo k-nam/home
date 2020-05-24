@@ -30,8 +30,8 @@ alias gt="~/dev/home/bin/gt.sh"
 alias gl="git log"
 alias gpsf="git push --set-upstream origin"
 
-alias dc='export $(cat ./env/.env-dev | xargs) && docker-compose -f docker-compose-dev.yml'
-alias dupbd='export $(cat ./env/.env-dev | xargs) && docker-compose -f docker-compose-dev.yml up -d --build'
+alias dc='export $(cat ./env/.env-${DEV_ENV} | xargs) && docker-compose -f docker-compose-dev.yml'
+alias dupbd='export $(cat ./env/.env-${DEV_ENV} | xargs) && docker-compose -f docker-compose-dev.yml up -d --build'
 alias di='docker images'
 alias dps='docker ps'
 alias dn='docker network'
@@ -39,11 +39,11 @@ alias dprune='docker container prune -f && docker image prune -f'
 
 alias deploy='~/dev/home/bin/deploy_movie.sh'
 
-alias nd='(export $(cat ../env/.env-dev | xargs) && npm run dev)'
-alias np='(export $(cat ../env/.env-dev | xargs) && npm run start)'
+alias nd='(export $(cat ../env/.env-${DEV_ENV} | xargs) && npm run dev)'
+alias np='(export $(cat ../env/.env-${DEV_ENV} | xargs) && npm run start)'
 alias snsdoc='~/dev/home/bin/sns.sh'
 
-alias rd='(export $(cat ./.env/.env-dev | xargs) && rails s --binding 0.0.0.0 -p $(eval echo \$$(basename ${PWD^^}_PORT)))'
+alias rd='(export $(cat ./.env/.env-${DEV_ENV} | xargs) && rails s --binding 0.0.0.0 -p $(eval echo \$$(basename ${PWD^^}_PORT)))'
 alias rp='(export $(cat ./.env/.env-prod | xargs) && bundle exec rake assets:precompile RAILS_ENV=production && rails s --binding 0.0.0.0 -p $(eval echo \$$(basename ${PWD^^}_PORT)))'
 
 
