@@ -30,8 +30,8 @@ alias gt="~/dev/home/bin/gt.sh"
 alias gl="git log"
 alias gpsf="git push --set-upstream origin"
 
-alias dc='export $(cat ./env/.env-${DEV_ENV} | xargs) && docker-compose -f docker-compose-dev.yml'
-alias dupbd='export $(cat ./env/.env-${DEV_ENV} | xargs) && docker-compose -f docker-compose-dev.yml up -d --build'
+alias dc='export $(cat ./env/.env-${DEV_ENV} | xargs) && docker-compose -f docker-compose.yml'
+alias dupbd='export $(cat ./env/.env-${DEV_ENV} | xargs) && docker-compose -f docker-compose.yml up -d --build'
 alias di='docker images'
 alias dps='docker ps'
 alias dn='docker network'
