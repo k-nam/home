@@ -38,8 +38,7 @@ alias dn='docker network'
 alias dprune='docker container prune -f && docker image prune -f'
 
 alias nd='(export $(cat ../env/.env-${MY_ENV} ../../secret | xargs) && npm run dev)'
-alias nb='(export $(cat ../env/.env-${MY_ENV} ../../secret | xargs) && npm run build)'
-alias ns='(export $(cat ../env/.env-${MY_ENV} ../../secret | xargs) && npm run start)'
+alias ns='(export $(cat ../env/.env-${MY_ENV} ../../secret | xargs) && npm run build && npm run start)'
 alias snsdoc='~/dev/home/bin/sns.sh'
 
 alias rd='(export $(cat env/.env-${MY_ENV} ../secret | xargs) && rails s --binding 0.0.0.0 -p $(eval echo \$$(basename ${PWD^^}_PORT)))'
