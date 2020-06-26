@@ -30,19 +30,23 @@ alias gt="~/dev/home/bin/gt.sh"
 alias gl="git log"
 alias gpsf="git push --set-upstream origin"
 
-alias dc='export $(cat env/.env-${MY_ENV} secret/secret | xargs) && docker-compose -f docker-compose.yml'
-alias dupbd='export $(cat ./env/.env-${MY_ENV} secret/secret | xargs) && docker-compose -f docker-compose.yml up -d --build'
+alias dc='shell/dc.sh'
+alias dupbd='shell/dupbd.sh'
 alias di='docker images'
 alias dps='docker ps'
 alias dn='docker network'
 alias dprune='docker container prune -f && docker image prune -f'
 
-alias nd='(export $(cat ../env/.env-${MY_ENV} ../secret/secret | xargs) && npm run dev)'
-alias ns='(export $(cat ../env/.env-${MY_ENV} ../secret/secret | xargs) && npm run build && npm run start)'
+alias ecs="shell/ecs_deploy.sh"
+alias sls="shell/sls_deploy.sh"
+
+alias nd='../shell/nd.sh'
+alias ns='../shell/ns.sh'
+
 alias snsdoc='~/dev/home/bin/sns.sh'
 
-alias rd='(export $(cat env/.env-${MY_ENV} secret/secret | xargs) && rails s --binding 0.0.0.0 -p $(eval echo \$$(basename ${PWD^^}_PORT)))'
-alias rp='(export $(cat env/.env-${MY_ENV} secret/secret | xargs) && bundle exec rake assets:precompile RAILS_ENV=production && rails s --binding 0.0.0.0 -p $(eval echo \$$(basename ${PWD^^}_PORT)))'
+alias rd='((source env/env-${HW_ENV}.sh && source secret/secret.sh) && rails s --binding 0.0.0.0 -p $(eval echo \$$(basename ${PWD^^}_PORT))))'
+alias rp='((source env/env-${HW_ENV}.sh && source secret/secret.sh) && bundle exec rake assets:precompile RAILS_ENV=production && rails s --binding 0.0.0.0 -p $(eval echo \$$(basename ${PWD^^}_PORT))))'
 
 
 alias killport='~/dev/home/bin/killport.sh'
