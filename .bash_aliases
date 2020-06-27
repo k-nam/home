@@ -31,7 +31,7 @@ alias gl="git log"
 alias gpsf="git push --set-upstream origin"
 
 alias dc='shell/dc.sh'
-alias dupbd='shell/dupbd.sh'
+alias dupbd='dc up --build -d'
 alias di='docker images'
 alias dps='docker ps'
 alias dn='docker network'
