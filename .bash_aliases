@@ -43,6 +43,9 @@ alias sls="shell/sls_deploy.sh"
 alias nd='../shell/nd.sh'
 alias ns='../shell/ns.sh'
 
+alias nr='~/dev/home/bin/nr.sh'
+alias lint='npm run lint'
+
 alias snsdoc='~/dev/home/bin/sns.sh'
 
 alias rd='((export $(cat env/env-${HW_ENV}.sh && source secret/secret.sh) && rails s --binding 0.0.0.0 -p $(eval echo \$$(basename ${PWD^^}_PORT))))'
