@@ -43,7 +43,7 @@ alias sls="shell/sls_deploy.sh"
 alias nd='../shell/nd.sh'
 alias ns='../shell/ns.sh'
 
-alias gd='../shell/gd.sh'
+alias gd='../../shell/gd.sh'
 
 alias nr='~/dev/home/bin/nr.sh'
 alias lint='npm run lint'
