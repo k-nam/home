@@ -58,6 +58,8 @@ alias rp='((export $(cat env/env-${HW_ENV}.sh && source secret/secret.sh) && bun
 
 alias killport='$BIN_DIR/killport.sh'
 
+alias port='sudo lsof -i -P -n | grep LISTEN'
+
 alias ctl="sudo systemctl"
 
 alias mysqlssh="$BIN_DIR/mysqlssh.sh"
