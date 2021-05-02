@@ -30,7 +30,7 @@ alias gm="git merge"
 alias gf="git fetch --all --prune"
 alias gt="$BIN_DIR/gt.sh"
 alias gl="git log"
-alias gpsf="git push --set-upstream origin"
+alias gpsf="$BIN_DIR/gpsf.sh"
 
 alias dc='shell/dc.sh'
 alias dupbd='dc up --build -d'
