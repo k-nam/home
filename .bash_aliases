@@ -68,3 +68,11 @@ alias mysqlclient="mysql -h 127.0.0.1 -udev -pcalvin1729"
 alias vv='source venv/bin/activate'
 
 alias tf='../shell/tf.sh'
+
+export HW_ENV=ec2
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+source /etc/profile.d/rvm.sh
