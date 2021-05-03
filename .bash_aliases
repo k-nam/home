@@ -67,7 +67,13 @@ alias mysqlclient="mysql -h 127.0.0.1 -udev -pcalvin1729"
 
 alias vv='source venv/bin/activate'
 
-alias tf='../shell/tf.sh'
+alias tfp='terraform plan -var-file="`terraform workspace show`.tfvars"'
+alias tfa='terraform apply -var-file="`terraform workspace show`.tfvars"'
+alias tfd='terraform destroy -var-file="`terraform workspace show`.tfvars"'
+alias tfw='terraform workspace show'
+alias tfws='terraform workspace select'
+alias tfwl='terraform workspace list'
+
 
 export HW_ENV=ec2
 
