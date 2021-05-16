@@ -31,6 +31,7 @@ alias gf="git fetch --all --prune"
 alias gt="$BIN_DIR/gt.sh"
 alias gl="git log"
 alias gpsf="$BIN_DIR/gpsf.sh"
+alias gpse="git commit --allow-empty -m 'empty' && git push"
 
 alias dc='shell/dc.sh'
 alias dupbd='dc up --build -d'
@@ -82,3 +83,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 source /etc/profile.d/rvm.sh
+
+export PATH=${PATH}:`go env GOPATH`/bin
