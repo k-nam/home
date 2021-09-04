@@ -31,6 +31,7 @@ alias gf="git fetch --all --prune"
 alias gt="$BIN_DIR/gt.sh"
 alias gl="git log"
 alias gpsf="$BIN_DIR/gpsf.sh"
+alias gpsf="$BIN_DIR/gpse.sh"
 alias gpse="git commit --allow-empty -m 'empty' && git push"
 
 alias dc='shell/dc.sh'
@@ -42,11 +43,15 @@ alias dprune='docker container prune -f && docker image prune -f'
 
 alias ecs="shell/ecs_deploy.sh"
 alias sls="shell/sls_deploy.sh"
+alias rea="shell/react_deploy.sh"
 
 alias nd='../shell/nd.sh'
 alias ns='../shell/ns.sh'
 
-alias gd='../../shell/gd.sh'
+alias res='shell/res.sh'
+alias reb='../shell/reb.sh'
+
+alias gd='shell/gd.sh'
 
 alias nr='$BIN_DIR/nr.sh'
 alias lint='npm run lint'
@@ -84,4 +89,5 @@ export NVM_DIR="$HOME/.nvm"
 
 source /etc/profile.d/rvm.sh
 
+export PATH=${PATH}:/usr/local/go/bin
 export PATH=${PATH}:`go env GOPATH`/bin
