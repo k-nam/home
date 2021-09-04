@@ -31,7 +31,7 @@ alias gf="git fetch --all --prune"
 alias gt="$BIN_DIR/gt.sh"
 alias gl="git log"
 alias gpsf="$BIN_DIR/gpsf.sh"
-alias gpsf="$BIN_DIR/gpse.sh"
+alias gpsl="$BIN_DIR/gpsl.sh"
 alias gpse="git commit --allow-empty -m 'empty' && git push"
 
 alias dc='shell/dc.sh'
