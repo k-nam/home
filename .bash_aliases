@@ -73,12 +73,14 @@ alias mysqlclient="mysql -h 127.0.0.1 -udev -pcalvin1729"
 
 alias vv='source venv/bin/activate'
 
-alias tfp='terraform plan -var-file="`terraform workspace show`.tfvars"'
-alias tfa='terraform apply -var-file="`terraform workspace show`.tfvars"'
-alias tfd='terraform destroy -var-file="`terraform workspace show`.tfvars"'
-alias tfw='terraform workspace show'
-alias tfws='terraform workspace select'
-alias tfwl='terraform workspace list'
+alias tp='terraform plan -var-file="`terraform workspace show`.tfvars"'
+alias ta='terraform apply -var-file="`terraform workspace show`.tfvars"'
+alias td='terraform destroy -var-file="`terraform workspace show`.tfvars"'
+alias tw='terraform workspace show'
+alias tws='terraform workspace select'
+alias twl='terraform workspace list'
+alias ta='terraform apply'
+alias ti='terraform init'
 
 alias aa='. /home/calvin/bin/aws_account.sh'
 
