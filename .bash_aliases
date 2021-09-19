@@ -80,6 +80,7 @@ alias tfw='terraform workspace show'
 alias tfws='terraform workspace select'
 alias tfwl='terraform workspace list'
 
+alias aa='. /home/calvin/bin/aws_account.sh'
 
 export HW_ENV=ec2
 
