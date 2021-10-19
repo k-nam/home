@@ -81,8 +81,8 @@ alias tw='terraform workspace show'
 alias tws='terraform workspace select'
 alias twl='terraform workspace list'
 alias ta='terraform apply'
-alias ti='/home/calvin/bin/ti.sh'
-
+alias ti='. /home/calvin/bin/ti.sh'
+alias ts='terraform state'
 alias aa='. /home/calvin/bin/aws_account.sh'
 
 export HW_ENV=ec2
