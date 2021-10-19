@@ -44,6 +44,7 @@ alias dprune='docker container prune -f && docker image prune -f'
 alias ecs="shell/ecs_deploy.sh"
 alias sls="shell/sls_deploy.sh"
 alias rea="shell/react_deploy.sh"
+alias dep="shell/deploy.sh"
 
 alias nd='../shell/nd.sh'
 alias ns='../shell/ns.sh'
@@ -80,7 +81,7 @@ alias tw='terraform workspace show'
 alias tws='terraform workspace select'
 alias twl='terraform workspace list'
 alias ta='terraform apply'
-alias ti='terraform init'
+alias ti='/home/calvin/bin/ti.sh'
 
 alias aa='. /home/calvin/bin/aws_account.sh'
 
