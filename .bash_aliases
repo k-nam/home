@@ -85,6 +85,9 @@ alias ti='. /home/calvin/bin/ti.sh'
 alias ts='terraform state'
 alias aa='. /home/calvin/bin/aws_account.sh'
 
+alias start='$BIN_DIR/start.sh'
+alias stop='$BIN_DIR/stop.sh'
+
 export HW_ENV=ec2
 
 export NVM_DIR="$HOME/.nvm"
