@@ -98,3 +98,5 @@ source /etc/profile.d/rvm.sh
 
 export PATH=${PATH}:/usr/local/go/bin
 export PATH=${PATH}:`go env GOPATH`/bin
+
+export PATH="$PATH:/usr/lib/dart/bin"
