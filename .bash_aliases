@@ -95,3 +95,13 @@ source /etc/profile.d/rvm.sh
 
 export PATH=${PATH}:/usr/local/go/bin
 export PATH=${PATH}:`go env GOPATH`/bin
+
+# Export the Android SDK path
+export ANDROID_HOME=$HOME/android-sdk
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Fixes sdkmanager error with java versions higher than java 8
+export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
+
+export GOOGLE_APPLICATION_CREDENTIALS="/home/calvin/gcloud/terraform.json"
