@@ -85,6 +85,9 @@ alias ti='. /home/calvin/bin/ti.sh'
 alias ts='terraform state'
 alias aa='. /home/calvin/bin/aws_account.sh'
 
+alias start='$BIN_DIR/start.sh'
+alias stop='$BIN_DIR/stop.sh'
+
 export HW_ENV=ec2
 
 export NVM_DIR="$HOME/.nvm"
@@ -105,3 +108,4 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
 
 export GOOGLE_APPLICATION_CREDENTIALS="/home/calvin/gcloud/terraform.json"
+export PATH="$PATH:/usr/lib/dart/bin"
