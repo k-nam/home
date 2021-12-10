@@ -111,3 +111,5 @@ export GOOGLE_APPLICATION_CREDENTIALS="/home/calvin/gcloud/terraform.json"
 export PATH="$PATH:/usr/lib/dart/bin"
 
 go env -w GOPRIVATE=github.com/flicspy/*,github.com/f-*
+
+eval `ssh-agent`
