@@ -7,8 +7,6 @@ alias df='df -h'
 alias q='screen -r'
 alias ql='screen -ls'
 
-alias python=python3
-alias pip=pip3
 alias vv='source .env/bin/activate'
 
 alias rmm="$BIN_DIR/rmm.sh"
@@ -113,3 +111,5 @@ export PATH="$PATH:/usr/lib/dart/bin"
 go env -w GOPRIVATE=github.com/flicspy/*,github.com/f-*
 
 eval `ssh-agent`
+ssh-add ~/.ssh/id_rsa_knam
+ssh-add ~/.ssh/id_rsa_calvincaulfield
