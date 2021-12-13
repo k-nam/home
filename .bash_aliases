@@ -80,6 +80,7 @@ alias tws='terraform workspace select'
 alias twl='terraform workspace list'
 alias ts='terraform state'
 alias aa='. /home/calvin/bin/aws_account.sh'
+alias gcp='. /home/calvin/bin/gcp.sh'
 
 alias start='$BIN_DIR/start.sh'
 alias stop='$BIN_DIR/stop.sh'
