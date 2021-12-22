@@ -111,4 +111,3 @@ go env -w GOPRIVATE=github.com/flicspy/*,github.com/f-*
 
 eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa_knam
-ssh-add ~/.ssh/id_rsa_calvincaulfield
