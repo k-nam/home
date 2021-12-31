@@ -40,7 +40,7 @@ alias dn='docker network'
 alias dprune='docker container prune -f && docker image prune -f'
 
 alias ecs="shell/ecs_deploy.sh"
-alias sls="shell/sls_deploy.sh"
+alias sls="serverless"
 alias rea="shell/react_deploy.sh"
 alias dep="shell/deploy.sh"
 
