@@ -78,9 +78,10 @@ alias td='terraform destroy -var-file="`terraform workspace show`.tfvars"'
 alias tw='terraform workspace show'
 alias tws='terraform workspace select'
 alias twl='terraform workspace list'
+alias tfm='terraform fmt -recursive'
 alias ts='terraform state'
 alias aa='. /home/calvin/bin/aws_account.sh'
-alias ab='. /home/calvin/bin/ab.sh'
+alias ac='. /home/calvin/bin/ab.sh'
 alias gcp='. /home/calvin/bin/gcp.sh'
 
 alias start='$BIN_DIR/start.sh'
@@ -105,7 +106,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 # Fixes sdkmanager error with java versions higher than java 8
 export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
 
-export GOOGLE_APPLICATION_CREDENTIALS="/home/calvin/gcloud/terraform.json"
+# export GOOGLE_APPLICATION_CREDENTIALS="/home/calvin/gcp_sa_key/f-admin.json"
 export PATH="$PATH:/usr/lib/dart/bin"
 
 go env -w GOPRIVATE=github.com/flicspy/*,github.com/f-*
