@@ -87,8 +87,6 @@ alias gcp='. /home/calvin/bin/gcp.sh'
 alias start='$BIN_DIR/start.sh'
 alias stop='$BIN_DIR/stop.sh'
 
-export HW_ENV=ec2
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
