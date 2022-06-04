@@ -107,5 +107,5 @@ export PATH="$PATH:/usr/lib/dart/bin"
 
 go env -w GOPRIVATE=github.com/flicspy/*,github.com/f-*
 
-eval `ssh-agent`
-ssh-add ~/.ssh/id_rsa_knam
+eval `ssh-agent` > /dev/null
+ssh-add ~/.ssh/id_rsa_knam 2>/dev/null
