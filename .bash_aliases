@@ -1,3 +1,5 @@
+BIN_DIR=~/bin
+
 alias free='free -h'
 alias du='du -h'
 alias df='df -h'
