@@ -1,5 +1,3 @@
-BIN_DIR=~/dev/calvincaulfield/home/bin
-
 alias free='free -h'
 alias du='du -h'
 alias df='df -h'
@@ -80,9 +78,9 @@ alias tws='terraform workspace select'
 alias twl='terraform workspace list'
 alias tfm='terraform fmt -recursive'
 alias ts='terraform state'
-alias aa='. /home/calvin/bin/aws_account.sh'
-alias ac='. /home/calvin/bin/ab.sh'
-alias gcp='. /home/calvin/bin/gcp.sh'
+alias aa='. $BIN_DIR/aws_account.sh'
+alias ac='. $BIN_DIR/ab.sh'
+alias gcp='. $BIN_DIR/gcp.sh'
 
 alias start='$BIN_DIR/start.sh'
 alias stop='$BIN_DIR/stop.sh'
