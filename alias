@@ -1,5 +1,3 @@
-PROMPT='%B%F{cyan}%~%f%b '
-
 BIN_DIR=~/bin
 
 alias ll='ls -alh'
