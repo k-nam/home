@@ -1,0 +1,10 @@
+export MY_HOME_DIR=~/dev/repo/k-nam/home
+. $MY_HOME_DIR/alias
+
+PROMPT='%B%F{green}ec2%f %F{cyan}%~%f%b '
+
+export PATH=${PATH}:/usr/local/go/bin:~/go/bin
+
+export HW_ENV=ec2
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
