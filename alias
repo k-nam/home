@@ -1,4 +1,4 @@
-BIN_DIR=~/bin
+SHELL_DIR=$MY_HOME_DIR/shell
 
 alias ll='ls -alh'
 alias free='free -h'
@@ -10,12 +10,12 @@ alias ql='screen -ls'
 
 alias vv='source .env/bin/activate'
 
-alias rmm="$BIN_DIR/rmm.sh"
+alias rmm="$SHELL_DIR/rmm.sh"
 alias rm="echo 'NG'"
-alias rm_real="$BIN_DIR/rmreal.sh"
+alias rm_real="$SHELL_DIR/rmreal.sh"
 
-alias speed="$BIN_DIR/speedtest.sh"
-alias dump="$BIN_DIR/mysql_dump.sh"
+alias speed="$SHELL_DIR/speedtest.sh"
+alias dump="$SHELL_DIR/mysql_dump.sh"
 
 alias gch="git checkout"
 alias gs="git status"
@@ -27,10 +27,10 @@ alias gps="git push"
 alias gpl="git pull --all"
 alias gm="git merge --no-ff --no-commit"
 alias gf="git fetch --all --prune"
-alias gt="$BIN_DIR/gt.sh"
+alias gt="$SHELL_DIR/gt.sh"
 alias gl="git log"
-alias gpsf="$BIN_DIR/gpsf.sh"
-alias gpsl="$BIN_DIR/gpsl.sh"
+alias gpsf="$SHELL_DIR/gpsf.sh"
+alias gpsl="$SHELL_DIR/gpsl.sh"
 alias gpse="git commit --allow-empty -m 'empty' && git push"
 
 alias dc='shell/dc.sh'
@@ -53,37 +53,37 @@ alias reb='../shell/reb.sh'
 
 alias gd='shell/gd.sh'
 
-alias nr='$BIN_DIR/nr.sh'
+alias nr='$SHELL_DIR/nr.sh'
 alias lint='npm run lint'
 
-alias snsdoc='$BIN_DIR/sns.sh'
+alias snsdoc='$SHELL_DIR/sns.sh'
 
 alias rd='((export $(cat env/env-${HW_ENV}.sh && source secret/secret.sh) && rails s --binding 0.0.0.0 -p $(eval echo \$$(basename ${PWD^^}_PORT))))'
 alias rp='((export $(cat env/env-${HW_ENV}.sh && source secret/secret.sh) && bundle exec rake assets:precompile RAILS_ENV=production && rails s --binding 0.0.0.0 -p $(eval echo \$$(basename ${PWD^^}_PORT))))'
 
 
-alias killport='$BIN_DIR/killport.sh'
+alias killport='$SHELL_DIR/killport.sh'
 
 alias port='sudo lsof -i -P -n | grep LISTEN'
 
 alias ctl="sudo systemctl"
 
-alias mysqlssh="$BIN_DIR/mysqlssh.sh"
+alias mysqlssh="$SHELL_DIR/mysqlssh.sh"
 alias mysqlclient="mysql -h 127.0.0.1 -udev -pcalvin1729"
 
 alias vv='source venv/bin/activate'
 
 alias tp='terraform plan -var-file="`terraform workspace show`.tfvars"'
-alias te='$BIN_DIR/te.sh'
+alias te='$SHELL_DIR/te.sh'
 alias td='terraform destroy -var-file="`terraform workspace show`.tfvars"'
 alias tw='terraform workspace show'
 alias tws='terraform workspace select'
 alias twl='terraform workspace list'
 alias tfm='terraform fmt -recursive'
 alias ts='terraform state'
-alias aa='. $BIN_DIR/aws_account.sh'
-alias ac='. $BIN_DIR/ab.sh'
-alias gcp='. $BIN_DIR/gcp.sh'
+alias aa='. $SHELL_DIR/aws_account.sh'
+alias ac='. $SHELL_DIR/ab.sh'
+alias gcp='. $SHELL_DIR/gcp.sh'
 
-alias start='$BIN_DIR/start.sh'
-alias stop='$BIN_DIR/stop.sh'
+alias start='$SHELL_DIR/start.sh'
+alias stop='$SHELL_DIR/stop.sh'

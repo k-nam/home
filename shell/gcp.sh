@@ -1,0 +1,1 @@
+export GOOGLE_APPLICATION_CREDENTIALS=/home/calvin/gcp_sa_key/f-$1.json
