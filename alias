@@ -82,6 +82,7 @@ alias twl='terraform workspace list'
 alias tfm='terraform fmt -recursive'
 alias ts='terraform state'
 alias aa='. $SHELL_DIR/aws_account.sh'
+alias mfa='$SHELL_DIR/mfa.sh'
 alias ac='. $SHELL_DIR/ab.sh'
 alias gcp='. $SHELL_DIR/gcp.sh'
 
