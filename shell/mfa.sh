@@ -4,8 +4,8 @@ credentials=$(aws sts get-session-token --token-code $1 --serial-number arn:aws:
 --query "Credentials.[AccessKeyId,SecretAccessKey,SessionToken]" --output text)
 
 id=$(echo $credentials | cut -d ' ' -f 1)
-key=$(echo $credentials | cut -d ' ' -f 1)
-token=$(echo $credentials | cut -d ' ' -f 1)
+key=$(echo $credentials | cut -d ' ' -f 2)
+token=$(echo $credentials | cut -d ' ' -f 3)
 
 aws configure set profile.mfa.aws_access_key_id "$id"
 aws configure set profile.mfa.aws_secret_access_key "$key"
