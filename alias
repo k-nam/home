@@ -87,3 +87,5 @@ alias gcp='. $SHELL_DIR/gcp.sh'
 
 alias start='$SHELL_DIR/start.sh'
 alias stop='$SHELL_DIR/stop.sh'
+
+alias dj='poetry run ./manage.py'
