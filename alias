@@ -89,3 +89,5 @@ alias start='$SHELL_DIR/start.sh'
 alias stop='$SHELL_DIR/stop.sh'
 
 alias dj='poetry run ./manage.py'
+alias install_github_actions_runner='$SHELL_DIR/install_github_actions_runner.sh'
+alias mount_instance_store='$SHELL_DIR/mount_instance_store.sh'
