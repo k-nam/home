@@ -63,13 +63,14 @@ def create_many_queues():
 
 def send_many_msgs():
     start_time = datetime.now()
-    range = 1000
-    end = 100000
-    duplicate = 2
+    range = 10
+    end = 1 * 100
+    duplicate = 1
     start = 0
     threads = []
     while start + range <= end:
         i = 0
+        print(f'Start thread: {start} ~ {start + range}')
         while i < duplicate:
             t = threading.Thread(target=send_messages,args=(start,range,))
             threads.append(t)
