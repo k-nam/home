@@ -21,7 +21,6 @@ func getSession() *session.Session {
 
 func sendMsg(client *sqs.SQS, wg *sync.WaitGroup, start int, end int) {
 	defer wg.Done()
-	fmt.Println("hey")
 	queuePrefix := "20220805090227"
 	for i := start; i < end; i++ {
 		queueUrl := fmt.Sprintf("https://sqs.us-east-1.amazonaws.com/721756646069/%s-%d", queuePrefix, i)
@@ -36,13 +35,12 @@ func sendMsg(client *sqs.SQS, wg *sync.WaitGroup, start int, end int) {
 		}
 		// fmt.Printf("msgid %s\n", *out.MessageId)
 	}
-	fmt.Println("hey 2")
 }
 
 func sendManyMsgs() {
 	startTime := time.Now()
-	interval := 100
-	end := 100 * 200
+	interval := 10
+	end := 10 * 100
 	duplicate := 1
 	client := sqs.New(getSession())
 	fmt.Println(*client.Config.Region)
@@ -50,15 +48,14 @@ func sendManyMsgs() {
 
 	for start := 0; start+interval <= end; start += interval {
 		for i := 0; i < duplicate; i++ {
-			fmt.Printf("Send message start: %d, end: %d\n", start, end)
+			// fmt.Printf("Send message start: %d, end: %d\n", start, end)
 			wg.Add(1)
 			go sendMsg(client, &wg, start, start+interval)
-			fmt.Println("aaaa")
 		}
 	}
 	wg.Wait()
 	duration := time.Since(startTime)
-	fmt.Printf("Throught: %f items / sec", float64(end*duplicate)/duration.Seconds())
+	fmt.Printf("# Item: %d, Time: %f\nThrought: %f items / sec", end*duplicate, duration.Seconds(), float64(end*duplicate)/duration.Seconds())
 }
 
 func main() {
