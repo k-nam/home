@@ -1,0 +1,20 @@
+export MY_HOME_DIR=~/dev/repo/k-nam/home
+. $MY_HOME_DIR/alias
+
+# zshrc
+PROMPT='%B%F{green}ec2%f %F{cyan}%~%f%b '
+
+# bash
+export PS1="\e[0;31example\e[m \W\$ "
+
+export HW_ENV=ec2
+
+export PATH=${PATH}:/usr/local/go/bin:~/go/bin
+go env -w GOPRIVATE=github.com/flicspy/*,github.com/f-*
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+
+eval `ssh-agent` > /dev/null
+ssh-add ~/.ssh/id_rsa_knam 2>/dev/null
