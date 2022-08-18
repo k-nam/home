@@ -6,7 +6,7 @@ PROMPT='%B%F{green}ec2%f %F{cyan}%~%f%b '
 
 # bash
 export PS1="\e[0;31example\e[m \W\$ "
-export PS1="\[\033[32m\]example\[\033[00m\] \W\$ "
+export PS1="\[\033[01;32m\]mac\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\] \$ "
 
 export HW_ENV=ec2
 
