@@ -1,6 +1,9 @@
 export MY_HOME_DIR=~/dev/repo/k-nam/home
 . $MY_HOME_DIR/alias
 
+# When using bash in mac
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # zshrc
 PROMPT='%B%F{green}ec2%f %F{cyan}%~%f%b '
 
