@@ -35,7 +35,7 @@ alias gpse="git commit --allow-empty -m 'empty' && git push"
 
 alias dc='shell/dc.sh'
 alias dupbd='dc up --build -d'
-alias di='docker images | sort'
+alias di='docker images --format "table {{.Repository}}\t{{.ID}}\t{{.Tag}}\t{{.Size}}\t{{.CreatedSince}}" | (read -r; printf "%s\n" "$REPLY"; sort -h)'
 alias dps='docker ps'
 alias dn='docker network'
 alias dprune='docker container prune -f && docker image prune -f'
