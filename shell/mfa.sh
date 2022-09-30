@@ -1,6 +1,6 @@
 set -eu
 
-OUT=$(aws sts get-session-token --token-code $1 --serial-number arn:aws:iam::461691961615:mfa/k-nam --profile k-nam --duration-seconds 43200)
+OUT=$(aws sts get-session-token --token-code $1 --serial-number arn:aws:iam::718629198452:mfa/k-nam --profile k-nam --duration-seconds 43200)
 export AWS_ACCESS_KEY_ID=$(echo $OUT | jq -r '.Credentials''.AccessKeyId');\
 export AWS_SECRET_ACCESS_KEY=$(echo $OUT | jq -r '.Credentials''.SecretAccessKey');\
 export AWS_SESSION_TOKEN=$(echo $OUT | jq -r '.Credentials''.SessionToken');
