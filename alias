@@ -93,3 +93,4 @@ alias install_github_actions_runner='$SHELL_DIR/install_github_actions_runner.sh
 alias mount_instance_store='$SHELL_DIR/mount_instance_store.sh'
 
 alias gke='$SHELL_DIR/gke.sh'
+alias gke2='$SHELL_DIR/gke2.sh'
