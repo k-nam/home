@@ -97,3 +97,4 @@ alias gke2='$SHELL_DIR/gke2.sh'
 
 alias ec2start='aws ec2 start-instances --instance-ids i-09af93a68ca4f9a0d --profile f-admin --region us-east-2'
 alias ec2stop='aws ec2 stop-instances --instance-ids i-09af93a68ca4f9a0d --profile f-admin --region us-east-2'
+alias ec2status='aws ec2 describe-instance-status --instance-ids i-09af93a68ca4f9a0d --profile f-admin --region us-east-2'
