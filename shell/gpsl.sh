@@ -10,4 +10,4 @@ git checkout master
 git pull
 git fetch --prune
 git branch -D $CUR_BRANCH
-git push --delete origin $CUR_BRANCH
+git push --delete origin $CUR_BRANCH | true
