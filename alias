@@ -32,7 +32,7 @@ alias gl="git log"
 alias gpsf="$SHELL_DIR/gpsf.sh"
 alias gpsl="$SHELL_DIR/gpsl.sh"
 alias gpse="git commit --allow-empty -m 'empty' && git push"
-
+alias gdb="$SHELL_DIR/gdb.sh"
 alias dc='shell/dc.sh'
 alias dupbd='dc up --build -d'
 alias di='docker images --format "table {{.Repository}}\t{{.ID}}\t{{.Tag}}\t{{.Size}}\t{{.CreatedSince}}" | (read -r; printf "%s\n" "$REPLY"; sort -h)'
