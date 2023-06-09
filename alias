@@ -2,7 +2,7 @@ SHELL_DIR=$MY_HOME_DIR/shell
 
 alias ll='ls -alh'
 alias free='free -h'
-alias du='du -h'
+alias du='du -sh'
 alias df='df -h'
 
 alias q='screen -r'
