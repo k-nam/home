@@ -1,3 +1,5 @@
+set -eux
+
 git checkout master
 git pull
 git checkout -b $1
