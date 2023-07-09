@@ -99,3 +99,5 @@ alias gke2='$SHELL_DIR/gke2.sh'
 alias cicdstart='aws ec2 start-instances --instance-ids i-007b2452704926eca --profile f-admin --region us-east-2'
 alias cicdstop='aws ec2 stop-instances --instance-ids i-007b2452704926eca --profile f-admin --region us-east-2'
 alias cicdstatus='aws ec2 describe-instance-status --instance-ids i-007b2452704926eca --profile f-admin --region us-east-2'
+
+alias curl="curl -w  'name: %{time_namelookup}\nconnect: %{time_connect}\npre: %{time_pretransfer}\nstart: %{time_starttransfer}\ntotal: %{time_total}\n'"
