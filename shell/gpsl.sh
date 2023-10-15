@@ -8,5 +8,6 @@ fi
 
 git checkout master
 git pull
+git diff $CUR_BRANCH --exit-code --quiet
 git fetch --prune
 git branch -D $CUR_BRANCH
