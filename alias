@@ -15,6 +15,7 @@ alias rm="echo 'NG'"
 alias rm_real="$SHELL_DIR/rmreal.sh"
 
 alias speed="$SHELL_DIR/speedtest.sh"
+alias speed2="$SHELL_DIR/speedtest_gcs.sh"
 alias dump="$SHELL_DIR/mysql_dump.sh"
 
 alias gch="git checkout"
