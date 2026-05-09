@@ -64,12 +64,14 @@ mkdir -p .repos
 
 # Refresh symlinks: one per sibling git repo (excluding ourselves)
 imports=()
+sibling_paths=()
 for dir in "$parent"/*/; do
   name="$(basename "$dir")"
   [[ "$name" == "claude" ]] && continue
   [[ -e "$dir/.git" ]] || continue
 
   ln -sfn "../../$name" ".repos/$name"
+  sibling_paths+=("../$name")
   [[ -f "$dir/CLAUDE.md" ]] && imports+=("@./.repos/$name/CLAUDE.md")
 done
 
@@ -85,12 +87,27 @@ else
   block=""
 fi
 awk -v block="$block" '
-  /<!-- BEGIN: imports/ { print; print block; skip=1; next }
+  /<!-- BEGIN: imports/ { print; if (block != "") print block; skip=1; next }
   /<!-- END: imports/  { skip=0 }
   !skip
 ' CLAUDE.md > CLAUDE.md.tmp && mv CLAUDE.md.tmp CLAUDE.md
 
-echo "Synced ${#imports[@]} repo(s)."
+# Sync sibling paths into .claude/settings.json so file access works
+# regardless of launcher (CLI flag, VS Code extension, etc.)
+command -v jq >/dev/null || { echo "jq required" >&2; exit 1; }
+settings=".claude/settings.json"
+[[ -f "$settings" ]] || echo '{}' > "$settings"
+if [[ ${#sibling_paths[@]} -gt 0 ]]; then
+  paths_json=$(printf '%s\n' "${sibling_paths[@]}" | jq -R . | jq -s .)
+else
+  paths_json='[]'
+fi
+tmp="$(mktemp)"
+jq --argjson paths "$paths_json" \
+   '.permissions.additionalDirectories = $paths' "$settings" > "$tmp"
+mv "$tmp" "$settings"
+
+echo "Synced ${#imports[@]} repo(s) with CLAUDE.md, ${#sibling_paths[@]} additional director(ies)."
 ```
 
 ## `claude/bin/launch`
@@ -104,18 +121,14 @@ cd "$here"
 
 ./bin/sync
 
-add_dirs=()
-for link in .repos/*/; do
-  [[ -L "${link%/}" ]] || continue
-  add_dirs+=(--add-dir "$(readlink -f "$link")")
-done
-
-exec claude "${add_dirs[@]}" "$@"
+exec claude "$@"
 ```
 
-Use `./bin/launch` instead of bare `claude`. It refreshes symlinks/imports
-and grants Claude file-access permission to each sibling via `--add-dir`
-on the real paths.
+Use `./bin/launch` to refresh symlinks/imports/settings.json before starting
+Claude. File-access permission for sibling repos is set via
+`permissions.additionalDirectories` in `.claude/settings.json` (committed),
+so it also applies when launching via the VS Code extension or any other
+launcher that doesn't run `bin/launch` first.
 
 ## Two things to verify on first use
 
@@ -127,7 +140,18 @@ on the real paths.
 
 2. **Does Grep search into symlinked dirs?** ripgrep doesn't follow
    symlinks by default. If Grep from `claude/` misses files inside
-   `.repos/product-api/`, it's because of this. The `--add-dir` flags in
-   `launch` give Claude access to the real paths, so the workaround is:
-   tell Claude to grep `../product-api/` (the real path) rather than
-   `.repos/product-api/`. You can encode this hint in `CLAUDE.md`.
+   `.repos/product-api/`, tell Claude to grep `../product-api/` (the real
+   path) instead. The `additionalDirectories` setting grants access to the
+   real paths, so this works.
+
+## Note on CLAUDE.md preload from sibling repos
+
+`additionalDirectories` only grants file access — it does NOT cause
+sibling `CLAUDE.md` files to preload. Two ways to surface them:
+
+- **Imports (preferred for static context):** `@./.repos/<name>/CLAUDE.md`
+  in the workspace `CLAUDE.md`, as `bin/sync` already manages.
+- **Auto-load (alternative):** set
+  `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1` in your shell — this
+  causes Claude Code to load CLAUDE.md from any `additionalDirectories`
+  entry. Replaces the `@` import approach.
