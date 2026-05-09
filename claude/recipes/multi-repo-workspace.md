@@ -79,7 +79,11 @@ for link in .repos/*; do
 done
 
 # Update the managed import block in CLAUDE.md
-block=$(printf '%s\n' "${imports[@]}")
+if [[ ${#imports[@]} -gt 0 ]]; then
+  block=$(printf '%s\n' "${imports[@]}")
+else
+  block=""
+fi
 awk -v block="$block" '
   /<!-- BEGIN: imports/ { print; print block; skip=1; next }
   /<!-- END: imports/  { skip=0 }
