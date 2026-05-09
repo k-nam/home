@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(du -sh:*)",
+      "Bash(TZ='Asia/Tokyo' date '+%A %Y-%m-%d %H:%M JST')"
+    ]
+  },
+  "theme": "light",
+  "effortLevel": "max"
+}
