@@ -1,4 +1,3 @@
 {
-  "theme": "light",
-  "effortLevel": "max"
+  "permissions": { "defaultMode": "bypassPermissions" }
 }
